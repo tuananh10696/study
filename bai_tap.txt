@@ -1,0 +1,22 @@
+Bài Tập JS
+
+Bài 1: Tạo 1 hàm để kiểm tra số nguyên dương, số nguyên âm?
+
+Yêu cầu : 
+	+ Kiểm tra giá trị của biến là kiểu số nguyên dương hay âm và trả ra Message tương ứng!	+ Code kiểm tra ở trong 1 hàm, format Code dễ nhìn và có comment dễ hiểu
+
+
+Bài 2: Viết hàm tính tổng của tất cả các số trong mảng, nếu trong mảng xuất hiện đối tượng khác kiểu nguyên dươngthì tiến hành loại bỏ object đó?
+
+Yêu cầu : 
+	+ Kiểm tra đầu vào trước khi tiến hành tính toán
+	+ Chỉ thực hiện tính toán khi đầu vào là 1 mảng
+
+
+Bài 3 : Tìm số lớn nhất và nhỏ nhất trong mảng?
+
+
+Bài 4 : Cho sẵn 1 array a, hãy thực hiện các thao tác sau:
+	+ Tính tổng các phần tử của a và in ra màn hinh
+	+ Cho trước 2 số m và n, in ra các phần tử của a nằm trong khoảng [m..n] theo thứ tự từ bé đến lớn.
+	+ In ra các số nguyên tố trong a.
