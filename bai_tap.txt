@@ -14,3 +14,9 @@ Yêu cầu :
 
 
 Bài 3 : Tìm số lớn nhất và nhỏ nhất trong mảng?
+
+
+Bài 4 : Cho sẵn 1 array a, hãy thực hiện các thao tác sau:
+	+ Tính tổng các phần tử của a và in ra màn hinh
+	+ Cho trước 2 số m và n, in ra các phần tử của a nằm trong khoảng [m..n] theo thứ tự từ bé đến lớn.
+	+ In ra các số nguyên tố trong a.
