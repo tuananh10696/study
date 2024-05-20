@@ -1,89 +1,64 @@
-// Ham kiem tra so nguyen duong
-function checkPositiveIntergers(value) {
-    if (Number.isInteger(value) && value < 0) { // Neu la so nguyen am
-        return 'Day la so nguyen am'
-    } else if (Number.isInteger(value) && value > 0) { // Neu la so nguyen duong
-        return 'Day la so nguyen duong'
-    }
-    else { // Neu nhap gia tri ko phai la kieu so
-        return 'Gia tri nhap vao ko dung'
-    }
-}
-
-var a = '1';
-console.log(checkPositiveIntergers(a))
-
-
-// Hàm tính tổng của các số trong mảng
-function sum(value) {
-    if (Array.isArray(value)) {
-        // Cach 1:
-        // Loại bỏ các phần tử ko phải là 1 số nguyên dương
-        const filteredArray = value.filter(function (item) {
-            return typeof item === 'number' && item > 0;
-        });
-
-        // Sau đó mới tính toán
-        let total = 0;
-        for (let i = 0; i < filteredArray.length; i++) {
-            total += filteredArray[i]
+// bai 1
+function removeDuplicates(arr) {
+    let uniqueArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!uniqueArr.includes(arr[i])) {
+            uniqueArr.push(arr[i]);
         }
-
-
-        // Cach 2:
-        // let total = 0;
-        // for (let i = 0; i < value.length; i++) {
-        //     if (Number.isInteger(value[i]) && value[i] > 0) {
-        //         total += value[i]
-        //     }
-        // }
-
-        return total
-
-    } else {
-        console.log('Đầu vào ko phải là 1 mảng.')
     }
+    return uniqueArr;
+}
+let numbers1 = [1, 2, 3, 1, 4, 2, 5];
+console.log(removeDuplicates(numbers1)); // Output: [1, 2, 3, 4, 5]
+
+
+
+// bai 2
+function countOccurrences(arr) {
+    let counts = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (counts[arr[i]]) {
+            counts[arr[i]]++;
+        } else {
+            counts[arr[i]] = 1;
+        }
+    }
+    return counts;
 }
 
-console.log(sum([1, '2', 'aa', 2, -1]))
+let numbers2 = [1, 2, 3, 1, 4, 2, 5, 1];
+console.log(countOccurrences(numbers2));
 
 
 
-// Bài 3:
-// Cách 1 ; sử dụng vòng lặp for
-var numbers = [1, 2, 3, 43, -5];
 
-// Khởi tạo max và min bằng giá trị đầu tiên của mảng
-var max = numbers[0];
-var min = numbers[0];
+// bai 3
+function calculateSavings(initialAmount, monthlyRatePercent, months) {
+    // Chuyển đổi lãi suất từ phần trăm sang tỷ lệ thập phân
+    let monthlyRate = monthlyRatePercent / 100;
 
-// Sử dụng vòng lặp for để duyệt qua các phần tử của mảng
-for (var i = 1; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-        max = numbers[i];
-    }
-    if (numbers[i] < min) {
-        min = numbers[i];
-    }
+    // Tính toán số tiền sau n tháng với lãi suất hàng tháng
+    let finalAmount = initialAmount * Math.pow((1 + monthlyRate), months);
+
+    // Làm tròn số tiền xuống tới đơn vị VND
+    finalAmount = Math.floor(finalAmount);
+
+    return finalAmount;
 }
 
-console.log("Số lớn nhất trong mảng là:", max);
-console.log("Số nhỏ nhất trong mảng là:", min);
+// Test
+let initialAmount = 1000000; // 1,000,000 VND
+let monthlyRatePercent = 10; // 1% lãi suất hàng tháng
+let months = 2; // 12 tháng
+
+const nFormat = new Intl.NumberFormat();
+let finalAmount = calculateSavings(initialAmount, monthlyRatePercent, months);
+console.log(`Số tiền sau ${months} tháng: ${nFormat.format(finalAmount)} VND`);
 
 
-
-// Cách 2 : sử dụng hàm
-var numbers = [1, 2, 3, 43, -5];
-
-// Lấy giá trị lớn nhất và nhỏ nhất
-var maxValue = Math.max(...numbers);
-var minValue = Math.min(...numbers);
-
-// In giá trị ra màn hình
-document.write("Giá trị lớn nhất là " + maxValue + "<br/>");
-document.write("Giá trị nhỏ nhất là " + minValue + "<br/>");
-
-
-
-
+// Trong JavaScript, Math.pow(x, y) là một hàm được sử dụng để tính lũy thừa của một số x với một số mũ y.
+// Tham số x là số cơ sở (base).
+// Tham số y là số mũ (exponent).
+// Hàm Math.pow(x, y) sẽ trả về kết quả là x mũ y.
+// Ví dụ: Math.pow(2, 3) sẽ trả về 8, vì 2 mũ 3 là 8.
 
