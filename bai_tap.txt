@@ -20,3 +20,51 @@ Bài 4 : Cho sẵn 1 array a, hãy thực hiện các thao tác sau:
 	+ Tính tổng các phần tử của a và in ra màn hinh
 	+ Cho trước 2 số m và n, in ra các phần tử của a nằm trong khoảng [m..n] theo thứ tự từ bé đến lớn.
 	+ In ra các số nguyên tố trong a.
+
+
+
+
+
+
+-----------Bai tap 21/3------------
+
+1. Viết một hàm removeDuplicates nhận vào một mảng và trả về một mảng mới không chứa các phần tử trùng lặp?
+// vi du
+let numbers = [1, 2, 3, 1, 4, 2, 5];
+console.log(removeDuplicates(numbers)); 
+// Output: [1, 2, 3, 4, 5]
+
+
+
+2. Đếm số lần xuất hiện của mỗi phần tử trong mảng?
+// vi du
+let numbers = [1, 2, 3, 1, 4, 2, 5, 1];
+console.log(countOccurrences(numbers)); 
+// Output: { '1': 3, '2': 2, '3': 1, '4': 1, '5': 1 }
+
+
+
+3. Sử dụng kiến thức mảng và vòng lặp tạo hàm tính
+ tiền gửi ngân hàng sau n tháng, lưu ý tính ra số tiền VND và làm tròn số!
+
+ GỢI Ý :
+ Công thức lãi kép là: 　A = P × ( 1 + r )^n
+ 
+・A là số tiền sau n tháng.
+・P là số tiền ban đầu.
+・r là lãi suất hàng tháng.
+・n là số tháng.
+
+*Lãi kép* : Sau một kỳ hạn gửi tiết kiệm, khách hàng sẽ nhận được một khoản tiền lãi. Nếu bạn cộng số tiền lãi này vào số tiền gốc ban đầu để tiếp tục gửi tiết kiệm thì tiền lãi của kỳ hạn tiếp theo được gọi là lãi kép
+
+
+let initialAmount = 1000000; // 1,000,000 VND
+let monthlyRatePercent = 10; // 1% lãi suất hàng tháng
+let months = 2; // 12 tháng
+
+let finalAmount = calculateSavings(initialAmount, monthlyRatePercent, months);
+console.log(`Số tiền sau ${months} tháng: ${nFormat.format(finalAmount)} VND`);
+
+// Output: (Kết quả đúng sẽ như bên dưới)
+// Số tiền sau 1 tháng: 1,100,000 VND
+// Số tiền sau 2 tháng: 1,210,000 VND
