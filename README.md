@@ -3,3 +3,4 @@
 - Để kiểm tra một số có phải là số nguyên không thì ta có hàm isInteger. Tuy nhiên, hàm này không thể nhận biết được đó là số nguyên dương hay số nguyên âm.
 
 3.
+
