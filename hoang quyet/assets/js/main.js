@@ -131,60 +131,85 @@
 
 
 
-let numbers = [1, 2, 3, 4, 5, 6, 3, 5, 8, 9, 6, 1];
-function removeDuplicates(arr) {
-    let arrSet = new Set(arr)
-    let newArr = Array.from(arrSet)
+// let numbers = [1, 2, 3, 4, 5, 6, 3, 5, 8, 9, 6, 1];
+// function removeDuplicates(arr) {
+//     let arrSet = new Set(arr)
+//     let newArr = Array.from(arrSet)
 
-    console.log(newArr)
-}
+//     console.log(newArr)
+// }
 
-removeDuplicates(numbers)
-
-
+// removeDuplicates(numbers)
 
 
 
+// function removeDuplicates(arr) {
+//     // Mảng trung gian để lưu trữ các phần tử duy nhất
+//     let uniqueArray = [];
 
-//  BAI 2
+//     // Sử dụng vòng lặp để duyệt qua từng phần tử của mảng đầu vào
+//     for (let i = 0; i < arr.length; i++) {
+//         // Nếu phần tử hiện tại chưa có trong mảng trung gian thì thêm vào
+//         if (!uniqueArray.includes(arr[i])) {
+//             uniqueArray.push(arr[i]);
+//         }
+//     }
+
+//     // Trả về mảng trung gian sau khi đã loại bỏ các phần tử trùng lặp
+//     return uniqueArray;
+// }
+
+// console.log(removeDuplicates([1,2,4,3,3,4,4,2,5,6]))
 
 
-let numbers2 = [1, 2, 3, 1, 4, 2, 5, 1];
+
+
+
+
+// //  BAI 2
+
+
+let arr = [1, 2, 3, 1, 4, 2,4, 5, 1]
 
 function countOccurrences(arr) {
-    var result = []
-    for (let i = 0; i < arr.length - 1; i++) {
-        var conunt = 1
-        for (let j = i + 1; j <=arr.length; ++j) {
-            if (arr[i] == arr[j]) {
-                arr.splice(arr[j],1)
-                conunt ++
-                console.log(conunt)
-            }
-            
+    // luu tru so lan xuat hien cua moi phan tu
+    var countArr = {}
+
+    for(var i = 0 ;i < arr.length;i++) {
+        //  lay phan tu hien tai
+        var number = arr[i]
+        //  kiem tra xem phan tu ton tai trong countArr chua
+        if(countArr[number]){
+            // neu ton tai thi tang gia tri len 1
+            countArr[number]++
+        } 
+        else {
+            countArr[number] = 1
         }
+    }
+    console.log(countArr)
         
     }
 
-
-}
-
-countOccurrences(numbers2)
+countOccurrences(arr)
 
 
-//  BAI 3
 
 
-function calculateSavings(initialAmount, monthlyRatePercent, months){
 
-    var finalAmount =Math.round(initialAmount*(1+monthlyRatePercent/100)**months)
+// //  BAI 3
+
+
+// function calculateSavings(initialAmount, monthlyRatePercent, months){
+
+//     var finalAmount =Math.round(initialAmount*(1+monthlyRatePercent/100)**months)
     
-    // console.log(`Số tiền sau', months, 'tháng:' ,nFormat.format(finalAmount), 'VND');
-   console.log('Số tiền sau' , months, 'tháng:',  new Intl.NumberFormat('ja-JP').format(
-    finalAmount), 'VND')
-};
+//     // console.log(`Số tiền sau', months, 'tháng:' ,nFormat.format(finalAmount), 'VND');
+//    console.log('Số tiền sau' , months, 'tháng:',  new Intl.NumberFormat('ja-JP').format(
+//     finalAmount), 'VND')
+// };
 
-calculateSavings(1000000, 1, 7);
+// calculateSavings(1000000, 1, 2);
     
 
 
