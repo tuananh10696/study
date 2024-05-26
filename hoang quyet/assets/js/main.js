@@ -232,5 +232,41 @@ function calculateRectangle(a, b, cbArea, cbPerimeter) {
 
 calculateRectangle(5, 3, calculateArea, calculatePerimeter)
 
+
+
 //  bai tap 2
+var itemListParent = document.querySelector('#item-list')
+
+//  ham thong bao so phan tu hien tai trong danh sach
+function cbamount() {
+    let amountItem = document.querySelector('.check-exist-items')
+    amountItem.innerText = 'Hien tai co ' + document.querySelectorAll('.list-group-item').length + ' item'
+}
+
+// ham them phan tu vao danh sach
+function addItem() {
+    // them li vao the ul
+    itemListParent.innerHTML = itemListParent.innerHTML + '<li class="list-group-item list-group-item list-group-item-primary" >Item</li>'
+    cbamount()
+}
+
+// ham xoa phan tu trong danh sach
+function removeItem() {
+    // xoa the li trong ul
+    itemListParent.lastChild.remove()
+    cbamount()
+}
+
+let addButton = document.querySelector('#add-btn')
+addButton.addEventListener('click', function () {
+    addItem()
+})
+
+let removeButton = document.querySelector('#remove-btn')
+removeButton.addEventListener('click', function () {
+
+    removeItem()
+})
+
+
 
